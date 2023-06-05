@@ -1,14 +1,26 @@
+
+# Bash script command
+
+ bash ~/Scripts/Wraper_scripts/316_Pelin_Sahlen_HiC_capture_intersect.sh /lustre/scratch126/humgen/teams/soranzo/users/mt19/HiC_Sahlen/ CCR2,EEFSEC,GATA2 4000 1 normal
+
+# Rclone commands 
+
+rclone copy Wide_matrix_findings_Fedes.tsv mt19_g_drive:/Project_WetLab_Projects/HiC_data_Sahlen/ --drive-shared-with-me;rclone copy Wide_matrix_findings_genes.tsv mt19_g_drive:/Project_WetLab_Projects/HiC_data_Sahlen/ --drive-shared-with-me;rclone copy Wide_matrix_findings_Supp4.tsv mt19_g_drive:/Project_WetLab_Projects/HiC_data_Sahlen/ --drive-shared-with-me;rclone copy Wide_matrix_findings.tsv mt19_g_drive:/Project_WetLab_Projects/HiC_data_Sahlen/ --drive-shared-with-me
+
+
 # This HiC data is obtained through a collaboration with Pelin Shalen SciLifeLab Stockholm
 
-# K562 datasets:
+# Datasets
+
+  K562 datasets:
 
   K562.hg19.AllInteractions.SP4.FDR0.001.txt
   K562.hg19.AllInteractions.SP4.FDR0.01.txt
   K562.hg19.AllInteractions.SP4.FDR0.1.txt
 
-  # Different threshold of stringency in the analysis FDR 0.1, 0.01 and 0.001
+  - Different threshold of stringency in the analysis FDR 0.1, 0.01 and 0.001
 
-  # Header. Always values refer to FDR 0.1
+  - Header. Always values refer to FDR 0.1
   
 	-RefSeqName: Region contacted name. Normally a gene name but also rsid and chr:pos. rsid contacts (28846) are classified as IntGroup DD. chr contacts (4229) are classified as IntGroup DD. 13582 genes protein coding and non-coding. Gene with most interactions NUP214 (1614). Genes with interactions are classified as  205617 PD and 56790 PP. PP interactions have a gene and transript name in these fields and in the Interactor fields
 
@@ -64,15 +76,15 @@
          48225 3
 
 
-# CMK datasets:
+- CMK datasets:
 
   CMK.hg19.AllInteractions.SP4.FDR0.001.txt
   CMK.hg19.AllInteractions.SP4.FDR0.01.txt
   CMK.hg19.AllInteractions.SP4.FDR0.1.txt
 
-  # Different threshold of stringency in the analysis FDR 0.1, 0.01 and 0.001
+  - Different threshold of stringency in the analysis FDR 0.1, 0.01 and 0.001
 
-  # Header. Always values refer to FDR 0.1
+  - Header. Always values refer to FDR 0.1
 
   RefSeqName      TranscriptName  Feature_Chr     Feature_Start
   Annotation      Strand
@@ -82,13 +94,13 @@
   IntGroup
   Normal  CarboplatinTreated      GemcitabineTreated      NofInts
 
-# Molm1 datasets
+- Molm1 datasets
 
 Molm1.hg19.AllInteractions.SP4.FDR0.001.txt  Molm1.hg19.AllInteractions.SP4.FDR0.01.txt  Molm1.hg19.AllInteractions.SP4.FDR0.1.txt
 
-  # Different threshold of stringency in the analysis FDR 0.1, 0.01 and 0.001
+  - Different threshold of stringency in the analysis FDR 0.1, 0.01 and 0.001
 
-  # Header. Always values refer to FDR 0.1
+  - Header. Always values refer to FDR 0.1
 
 RefSeqName      TranscriptName
 Feature_Chr     Feature_Start   Annotation      Strand
@@ -98,11 +110,11 @@ MG1_p_value  MG2_p_value     MC1_p_value     MC2_p_value     MN1_p_value     MN2
 IntGroup
 Normal  CarboplatinTreated      GemcitabineTreated      NofInts
 
-# THP1 datasets
+- THP1 datasets
 
 THP1run.hg19.AllInteractions.SP4.FDR0.001.txt  THP1run.hg19.AllInteractions.SP4.FDR0.01.txt  THP1run.hg19.AllInteractions.SP4.FDR0.1.txt
 
- # Header
+ - Header
 
 RefSeqName      TranscriptName
 Feature_Chr     Feature_Start   Annotation      Strand
@@ -112,11 +124,11 @@ THP1.nLPS.rep1_p_value  THP1.nLPS.rep3_p_value  THP1.wLPS.rep1_p_value  THP1.wLP
 IntGroup
 Normal  LPSTreated      NofInts
 
-# GM12878 datasets
+- GM12878 datasets
 
 GM12878.hg19.AllInteractions.SP4.FDR0.001.txt  GM12878.hg19.AllInteractions.SP4.FDR0.01.txt  GM12878.hg19.AllInteractions.SP4.FDR0.1.txt
 
-# Header
+- Header
 
 RefSeqName      TranscriptName
 Feature_Chr     Feature_Start   Annotation      Strand
@@ -125,15 +137,6 @@ GM12878_rep1_SuppPairs  GM12878_rep2_SuppPairs  GM12878_rep3_SuppPairs  GM12878_
 IntGroup
 R1      R2      R3      NofReps # Replicate 3 is not sequenced as deep, many interactions are not expected to replicate in R3
 
-# HEKa datasets
+- HEKa datasets
 
 HEKa.hg19.AllInteractions.SP4.FDR0.1.txt, etc
-
-keep the Normal results
-
-bash ~/Scripts/Wraper_scripts/316_Pelin_Sahlen_HiC_capture_intersect.sh /lustre/scratch126/humgen/teams/soranzo/users/mt19/HiC_Sahlen/ CCR2,EEFSEC,GATA2 4000 1 normal
-
-rclone copy Wide_matrix_findings_Fedes.tsv mt19_g_drive:/Project_WetLab_Projects/HiC_data_Sahlen/ --drive-shared-with-me
-rclone copy Wide_matrix_findings_genes.tsv mt19_g_drive:/Project_WetLab_Projects/HiC_data_Sahlen/ --drive-shared-with-me
-rclone copy Wide_matrix_findings_Supp4.tsv mt19_g_drive:/Project_WetLab_Projects/HiC_data_Sahlen/ --drive-shared-with-me
-rclone copy Wide_matrix_findings.tsv mt19_g_drive:/Project_WetLab_Projects/HiC_data_Sahlen/ --drive-shared-with-me
